@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">Postulaciones</string>
+    <string name="password">Contraseña</string>
+    <string name="Email">Email</string>
+    <string name="Send">Entrar</string>
+    <string name="name">Nombre</string>
+    <string name="LastNamep">Apellido paterno</string>
+    <string name="LastNamem">Apellido Materno</string>
+    <string name="street">Calle</string>
+    <string name="Number">Número</string>
+    <string name="col">Colonia</string>
+    <string name="cp">CódigoPostal</string>
+    <string name="Phone">Teléfono</string>
+    <string name="Rfc">Rfc</string>
+    <string name="SendData">Enviar</string>
+    <string name="title_activity_home">Home</string>
+    <string name="title_home">Prospectos</string>
+    <string name="title_dashboard">Puestos</string>
+    <string name="title_notifications">Usuarios</string>
+    <string name="Postulaciones">Postulaciones</string>
+    <string name="Puest">puesto</string>
+</resources>

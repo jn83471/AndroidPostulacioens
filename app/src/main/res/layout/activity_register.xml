@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".register">
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvNombre"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/name" />
+
+            <EditText
+                android:id="@+id/edtNombre"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName" />
+
+            <TextView
+                android:id="@+id/tvApellidop"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/LastNamep" />
+
+            <EditText
+                android:id="@+id/edtApellidop"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName" />
+
+            <TextView
+                android:id="@+id/tvApellidom"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/LastNamem" />
+
+            <EditText
+                android:id="@+id/edtApellidom"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName" />
+
+            <TextView
+                android:id="@+id/tvEmailp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/Email" />
+
+            <EditText
+                android:id="@+id/edtEmailp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textEmailAddress" />
+
+            <TextView
+                android:id="@+id/tvCalle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/street" />
+
+            <EditText
+                android:id="@+id/edtCalle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName" />
+
+            <TextView
+                android:id="@+id/tvNumero"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/Number" />
+
+            <EditText
+                android:id="@+id/edtNumero"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="number" />
+
+            <TextView
+                android:id="@+id/tvColonia"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/col" />
+
+            <EditText
+                android:id="@+id/edtColonia"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName" />
+
+            <TextView
+                android:id="@+id/tvCp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/cp" />
+
+            <EditText
+                android:id="@+id/edtCp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="number" />
+
+            <TextView
+                android:id="@+id/tvPhone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/Phone" />
+
+            <EditText
+                android:id="@+id/edtPhone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="phone" />
+
+            <TextView
+                android:id="@+id/tvRfc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/Rfc" />
+
+            <EditText
+                android:id="@+id/edtRfc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName" />
+
+            <TextView
+                android:id="@+id/tvPuesto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/Puest" />
+
+            <Spinner
+                android:id="@+id/spPuesto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="50dp" >
+
+            </androidx.recyclerview.widget.RecyclerView>
+
+            <ImageView
+                android:id="@+id/imbFiles"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/purple_500"
+                android:foregroundTint="@color/white"
+                android:padding="5dp"
+                android:tint="@color/white"
+                app:srcCompat="@drawable/ic_baseline_file_copy_24"
+                tools:srcCompat="@drawable/ic_baseline_file_copy_24" />
+
+            <Button
+                android:id="@+id/btnSendRegister"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/SendData" />
+
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
