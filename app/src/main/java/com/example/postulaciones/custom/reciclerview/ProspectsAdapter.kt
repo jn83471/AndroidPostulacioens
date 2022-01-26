@@ -56,7 +56,7 @@ class ProspectsAdapter(var elementos: ArrayList<prospectsApiInterface>,c:Context
         holder.Email?.text="Email: "+elements!!.get(position).email.toString();
         holder.Telefono?.text="Teléfono: "+elements!!.get(position).phone.toString();
         holder.Rfc?.text="RFC: "+elements!!.get(position).rfc.toString();
-        holder.Puesto?.text="Puesto: "+elements!!.get(position).has_puesto.display_name.toString();
+        holder.Puesto?.text="Puesto: "+elements!!.get(position).has_puesto?.display_name.toString();
     }
 
     override fun getItemCount(): Int {

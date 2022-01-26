@@ -3,6 +3,7 @@ package com.example.postulaciones
 import android.text.Editable
 import com.example.postulaciones.Api.*
 import okhttp3.MultipartBody
+import okhttp3.RequestBody
 import okhttp3.ResponseBody
 import retrofit2.Call
 import retrofit2.Response
@@ -29,17 +30,17 @@ interface ApiService {
     @Headers("Accept: application/vnd.yourapi.v1.full+json",
         "User-Agent: Your-App-Name")
     @POST("/api/register")
-    fun register(@Part("nombre") nombre:String,
-                 @Part("app") app:String,
-                 @Part("apm") apm:String,
-                 @Part("calle") calle:String,
-                 @Part("numero") numero:String,
-                 @Part("col") col:String,
-                 @Part("cp") cp:String,
-                 @Part("email") email:String,
-                 @Part("phone") phone:String,
+    fun register(@Part("nombre") nombre:RequestBody,
+                 @Part("app") app:RequestBody,
+                 @Part("apm") apm:RequestBody,
+                 @Part("calle") calle:RequestBody,
+                 @Part("numero") numero:RequestBody,
+                 @Part("col") col:RequestBody,
+                 @Part("cp") cp:RequestBody,
+                 @Part("email") email:RequestBody,
+                 @Part("phone") phone:RequestBody,
                  @Part("puesto") puesto:Int,
-                 @Part("rfc") rfc:String,
+                 @Part("rfc") rfc:RequestBody,
                  @Part nameFile:List<MultipartBody.Part>): Call<ResponseBody>
 
 }

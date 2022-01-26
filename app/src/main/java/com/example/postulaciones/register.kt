@@ -25,6 +25,7 @@ import com.example.postulaciones.Api.NomalResponse
 import com.example.postulaciones.Api.Registerclasss
 import com.example.postulaciones.custom.reciclerview.PuestosAdapter
 import okhttp3.*
+import okhttp3.MediaType.Companion.toMediaType
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
 import retrofit2.Call
 import retrofit2.Callback
@@ -41,13 +42,7 @@ import retrofit2.http.Multipart
 import okhttp3.MultipartBody
 
 import okhttp3.RequestBody
-
-
-
-
-
-
-
+import okhttp3.RequestBody.Companion.toRequestBody
 
 
 class register : AppCompatActivity(),View.OnClickListener {
@@ -97,35 +92,24 @@ class register : AppCompatActivity(),View.OnClickListener {
             R.id.btnSendRegister->{
                 val r: ResponseApi = ResponseApi();
                 val p:Has_puesto= puesto?.selectedItem as Has_puesto
-                val multipartBody = MultipartBody.Builder()
-                    .setType(MultipartBody.FORM)
-                    .addFormDataPart("nombre", nombre?.text.toString())
-                    .addFormDataPart("app", app?.text.toString())
-                    .addFormDataPart("apm",apm?.text.toString())
-                    .addFormDataPart("calle", calle?.text.toString())
-                    .addFormDataPart("numero",Numero?.text.toString())
-                    .addFormDataPart("col", colonia?.text.toString())
-                    .addFormDataPart("cp",cp?.text.toString())
-                    .addFormDataPart("email", email?.text.toString())
-                    .addFormDataPart("phone",phone?.text.toString())
-                    .addFormDataPart("puesto", p!!.id.toString())
-                    .addFormDataPart("rfc",rfc?.text.toString())
+                val nombrer:RequestBody=nombre!!.text.toString().toRequestBody("text/plain;charset=utf-8".toMediaType())
+                val appr:RequestBody=app!!.text.toString().toRequestBody("text/plain;charset=utf-8".toMediaType())
+                val apmr:RequestBody=apm!!.text.toString().toRequestBody("text/plain;charset=utf-8".toMediaType())
+                val caller:RequestBody=calle!!.text.toString().toRequestBody("text/plain;charset=utf-8".toMediaType())
+                val Numeror:RequestBody=Numero!!.text.toString().toRequestBody("text/plain;charset=utf-8".toMediaType())
+                val coloniar:RequestBody=colonia!!.text.toString().toRequestBody("text/plain;charset=utf-8".toMediaType())
+                val cpr:RequestBody=cp!!.text.toString().toRequestBody("text/plain;charset=utf-8".toMediaType())
+                val emailr:RequestBody=email!!.text.toString().toRequestBody("text/plain;charset=utf-8".toMediaType())
+                val phoner:RequestBody=phone!!.text.toString().toRequestBody("text/plain;charset=utf-8".toMediaType())
                 var parts: MutableList<MultipartBody.Part> = ArrayList()
                 for (i in 0 until images.size) {
                     parts!!.add(prepairFiles("nameFile[]", images!!.get(i)))
-                    //val st: String? =getContentResolver().getType(images!!.get(i))
-                    //Toast.makeText(applicationContext,st,Toast.LENGTH_LONG).show()
-                    //multipartBody.addFormDataPart("nameFile[]",file.name, RequestBody.create(
-                    //    st!!.toMediaTypeOrNull(), file))
                 }
-                val requestBody: MultipartBody = multipartBody.build()
                 Log.d("count",(parts!!.size).toString());
-                //val nombrerl:RequestBody=RequestBody.create("text/plain".toMediaTypeOrNull(), nombre?.text.toString())
-                //val puestol:RequestBody=RequestBody.create("text/plain".toMediaTypeOrNull(), "1")
-                val call1: Call<ResponseBody> =r.getClient()!!.register(nombre?.text.toString(),
-                        app?.text.toString(),apm?.text.toString(),calle?.text.toString(),
-                        Numero?.text.toString(),colonia?.text.toString(),cp?.text.toString(),email?.text.toString(),
-                        phone?.text.toString(),p?.id,rfc?.text.toString(),parts)
+                val call1: Call<ResponseBody> =r.getClient()!!.register(nombrer,
+                        appr,apmr,caller,
+                        Numeror,coloniar,cpr,emailr,
+                        phoner,p?.id,rfc?.text.toString().toRequestBody("text/plain;charset=utf-8".toMediaType()),parts)
                 call1.enqueue(object : Callback<ResponseBody> {
                     override fun onResponse(
                         call: Call<ResponseBody>,
